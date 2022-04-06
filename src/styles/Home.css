@@ -24,12 +24,13 @@ body {
     margin: 10px 100px; 
 }
 
-.homecontainer .outerheading{
-	font-size: 18px;
+.homecontainer .nav-path{
+	font-size: 14px;
 	font-weight: 800;
-	color: #04084e;
+	color: #04084e90;
 	text-transform: capitalize;
 	margin: 20px 0;
+	cursor: pointer;
 }
 
 .homecontainer .main .card{
@@ -174,6 +175,83 @@ body {
 .homecontainer .stats-bold{
 	font-size: 20px;
 	font-weight: 600;
+}
+
+.homecontainer .smheader{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.homecontainer .smheader h6{
+	color: #04084e;
+	font-weight: 600;
+}
+
+
+.homecontainer .rowheading{
+	border-bottom: 2px solid #04084e50;
+	font-weight: 600;
+}
+
+.homecontainer .rowproducts{
+	margin-top: 13px;
+	padding-bottom: 13px;
+	border-bottom: 1px solid #04084e50;
+}
+
+.homecontainer .status {
+	border: 1px solid ;
+	border-radius: 10px;
+	width: fit-content;
+	padding: 0 5px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.homecontainer .cat{
+	margin-top: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #04084e50;
+}
+
+.homecontainer .innerheader{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.homecontainer .catcircle{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	background-color: #b09456;
+	margin-right: 10px;
+}
+
+.homecontainer .innerheader h6{
+	color: #04084e;
+	font-weight: 600;
+	font-size: 14px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.homecontainer .roundamount{
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.homecontainer .data-circles{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
 

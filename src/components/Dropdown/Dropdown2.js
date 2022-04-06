@@ -18,6 +18,16 @@ function Dropdown2() {
 			path: '/productMng',
 			cName: 'dropdown-link',
 		},
+		{
+			title: 'Businesses',
+			path: '/businessMng',
+			cName: 'dropdown-link',
+		},
+		{
+			title: 'Orders',
+			path: '/ordersMng',
+			cName: 'dropdown-link',
+		},
 	];
 
 	return (

@@ -71,19 +71,9 @@ function NavBar() {
 	};
 	const closeMobileMenu = () => setClick(!click);
 
-	const changeBackground = () => {
-		if (window.scrollY >= 80) {
-			setNavbar(true);
-		} else {
-			setNavbar(false);
-		}
-	};
-
-	window.addEventListener('scroll', changeBackground);
-
 	return (
 		<>
-			<nav className={navbar ? 'navbar-bc' : 'navbar'}>
+			<nav className='navbar'>
 				<div className='navbar-container'>
 					<div className='left'>
 						<NavLink
@@ -166,30 +156,6 @@ function NavBar() {
 						</li>
 						<li
 							className='nav-item'
-							onMouseEnter={() => onMouseEnter('communication')}
-							onMouseLeave={onMouseLeave}
-						>
-							<Link className='nav-links' onClick={closeMobileMenu}>
-								<Icon
-									path={mdiMessageOutline}
-									title='communication'
-									size={'20px'}
-									color='#F1F2EE'
-									className='nav-icon'
-								/>
-								Communication
-								<Icon
-									path={mdiChevronDown}
-									title='down'
-									size={'20px'}
-									color='#F1F2EE'
-									style={{ marginLeft: 5 }}
-								/>
-							</Link>
-							{dropdown === 'communication' && <Dropdown />}
-						</li>
-						<li
-							className='nav-item'
 							onMouseEnter={() => onMouseEnter('manage')}
 							onMouseLeave={onMouseLeave}
 						>
@@ -212,6 +178,31 @@ function NavBar() {
 							</Link>
 							{dropdown === 'manage' && <Dropdown2 />}
 						</li>
+						<li
+							className='nav-item'
+							onMouseEnter={() => onMouseEnter('communication')}
+							onMouseLeave={onMouseLeave}
+						>
+							<Link className='nav-links' onClick={closeMobileMenu}>
+								<Icon
+									path={mdiMessageOutline}
+									title='communication'
+									size={'20px'}
+									color='#F1F2EE'
+									className='nav-icon'
+								/>
+								Communication
+								<Icon
+									path={mdiChevronDown}
+									title='down'
+									size={'20px'}
+									color='#F1F2EE'
+									style={{ marginLeft: 5 }}
+								/>
+							</Link>
+							{dropdown === 'communication' && <Dropdown />}
+						</li>
+
 						<li
 							className='nav-item'
 							onMouseEnter={() => onMouseEnter('create')}

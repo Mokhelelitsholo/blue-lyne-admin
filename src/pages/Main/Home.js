@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Chart } from 'primereact/chart';
 import '../../styles/Home.css';
 import Icon from '@mdi/react';
+import { ProductData, CategoryData } from '../../content/data';
 import {
 	mdiAccountGroupOutline,
 	mdiAccountHardHatOutline,
+	mdiApps,
 	mdiBasket,
 	mdiCartOutline,
 	mdiDotsVertical,
@@ -87,11 +89,46 @@ const Home = () => {
 		return <div className='filler' style={{ width: `${props.percentage}%` }} />;
 	};
 
+	const statuscheck = (qty) => {
+		if (qty < 1) {
+			return (
+				<div
+					className='status'
+					style={{ borderColor: '#df4759', color: '#df4759' }}
+				>
+					Out of Stock{' '}
+				</div>
+			);
+		} else if (qty < 10) {
+			return (
+				<div
+					className='status'
+					style={{ borderColor: ' #eed202', color: ' #eed202' }}
+				>
+					Running low
+				</div>
+			);
+		} else
+			return (
+				<div
+					className='status'
+					style={{ borderColor: '#4BB543', color: '#4BB543' }}
+				>
+					Available
+				</div>
+			);
+	};
+
+	const amountcal = (price, qty) => {
+		let amount = Math.abs(price * qty);
+		return amount.toFixed(2);
+	};
+
 	return (
 		<>
 			<div className='headerspace' />
 			<div className='homecontainer'>
-				<div className='outerheading'>hello tsholofelo</div>
+				<div className='nav-path'>Dashboard</div>
 
 				<section className='main'>
 					<div className='row'>
@@ -326,7 +363,75 @@ const Home = () => {
 
 				<section>
 					<div className='row'>
-						<div className='col'></div>
+						<div className='col'>
+							<div className='card smcard'>
+								<div className='smheader'>
+									<h6>Recent Products</h6>
+
+									<Icon
+										path={mdiDotsVertical}
+										title='options'
+										size={'20px'}
+										color='#04084e'
+										className='optionicon'
+									/>
+								</div>
+								<div className='productlist'>
+									<div className='row rowheading'>
+										<div className='col-4'>Product Name</div>
+										<div className='col-2'>Price</div>
+										<div className='col-2'>Quantity</div>
+										<div className='col-2'>Status</div>
+										<div className='col-2'>Amount</div>
+									</div>
+									{ProductData.map((prod, index) => (
+										<div className='row rowproducts' key={index}>
+											<div className='col-4'>{prod.ProductName}</div>
+											<div className='col-2'>R {prod.Price}</div>
+											<div className='col-2'>{prod.Quantity}</div>
+											<div className='col-2'>{statuscheck(prod.Quantity)}</div>
+											<div className='col-2'>
+												R {amountcal(prod.Price, prod.Quantity)}
+											</div>
+										</div>
+									))}
+								</div>
+							</div>
+						</div>
+						<div className='col-4'>
+							<div className='card smcard'>
+								<div className='smheader'>
+									<h6>Best Selling Category</h6>
+
+									<Icon
+										path={mdiDotsVertical}
+										title='options'
+										size={'20px'}
+										color='#04084e'
+										className='optionicon'
+									/>
+								</div>
+								{CategoryData.map((item, index) => (
+									<div className='smheader cat' key={index}>
+										<div className='innerheader'>
+											<div className='catcircle'>
+												<Icon
+													path={mdiApps}
+													title='categoty'
+													size={'30px'}
+													color='#FFF'
+												/>
+											</div>
+											<div>
+												<h6>{item.Category}</h6>
+												<p>Sales: R {item.Sales}</p>
+											</div>
+										</div>
+										<div className='roundamount'>R 9k</div>
+									</div>
+								))}
+							</div>
+						</div>
 					</div>
 				</section>
 			</div>
