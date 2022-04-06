@@ -1,0 +1,145 @@
+@font-face {
+	font-family: 'Poppins';
+	src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+	font-display: swap;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	color: #04084e;
+	overflow-x: hidden;
+	background-color: #F0EFF5;
+}
+
+.headerspace{
+	height: 120px;
+}
+
+.profilecontainer{
+    flex: 1;
+    background-color: #F0EFF5;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 100px; 
+}
+
+.profilecontainer .nav-path{
+	font-size: 14px;
+	font-weight: 800;
+	color: #04084e90;
+	text-transform: capitalize;
+	margin: 20px 0;
+	cursor: pointer;
+}
+
+.profilecontainer .main .card{
+	padding: 20px 30px;
+	margin-bottom: 20px;
+}
+
+.profilecontainer .info{
+	padding: 20px 30px;
+	margin-bottom: 20px;
+    width: 100%;
+}
+
+.profilecontainer .info .image-name{
+    display: flex;
+    flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+    margin-bottom: 30px;
+}
+
+.profilecontainer .info .image {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 1px solid #04084e50;
+    margin-right: 20px;
+}
+
+.profilecontainer .info .user-name {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.profilecontainer .info .heading {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #04084e90;
+}
+
+.profilecontainer .info .information{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.profilecontainer .info .information .stats{
+	font-weight: 600;
+	margin-right: 5px;
+}
+
+.profilecontainer .header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.profilecontainer .header h6{
+	color: #04084e;
+	font-weight: 600;
+}
+
+.profilecontainer .header .optionicon{
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.profilecontainer .header .optionicon:hover{
+	transform: scale(1.1);
+}
+
+.profilecontainer .rowheading{
+    padding-bottom: 10px;
+	border-bottom: 2px solid #04084e50;
+	font-weight: 600;
+}
+
+.profilecontainer .rowbottom{
+	padding-top: 20px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+
+.profilecontainer .listdata{
+	margin-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #04084e50;
+}
+
+.profilecontainer .status {
+	border: 1px solid ;
+	border-radius: 10px;
+	width: fit-content;
+	padding: 3px 10px;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.profilecontainer .time-space{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}

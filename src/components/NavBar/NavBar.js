@@ -13,15 +13,14 @@ import {
 	mdiMessageOutline,
 	mdiBriefcaseOutline,
 	mdiFolderPlus,
-	mdiPencilPlusOutline,
 	mdiCalendarMonthOutline,
+	mdiCartOutline,
 } from '@mdi/js';
 
 import Logo from '../../assets/images/logo.png';
 import Dropdown from '../Dropdown/Dropdown';
 import Dropdown2 from '../Dropdown/Dropdown2';
 import Dropdown3 from '../Dropdown/Dropdown3';
-import Dropdown4 from '../Dropdown/Dropdown4';
 
 const useMountedState = () => {
 	const mountedRef = useRef(false);
@@ -225,34 +224,30 @@ function NavBar() {
 							onMouseEnter={() => onMouseEnter('add')}
 							onMouseLeave={onMouseLeave}
 						>
-							<Link className='nav-links' onClick={closeMobileMenu}>
+							<Link
+								to='/Orders'
+								className='nav-links'
+								onClick={closeMobileMenu}
+							>
 								<Icon
-									path={mdiPencilPlusOutline}
-									title='add'
+									path={mdiCartOutline}
+									title='orders'
 									size={'20px'}
 									color='#F1F2EE'
 									className='nav-icon'
 								/>
-								Add
-								<Icon
-									path={mdiChevronDown}
-									title='down'
-									size={'20px'}
-									color='#F1F2EE'
-									style={{ marginLeft: 5 }}
-								/>
+								Orders
 							</Link>
-							{dropdown === 'add' && <Dropdown4 />}
 						</li>
 						<li className='nav-item'>
 							<Link
-								to='/contact-us'
+								to='/Calendar'
 								className='nav-links'
 								onClick={closeMobileMenu}
 							>
 								<Icon
 									path={mdiCalendarMonthOutline}
-									title='create'
+									title='calendar'
 									size={'20px'}
 									color='#F1F2EE'
 									className='nav-icon'

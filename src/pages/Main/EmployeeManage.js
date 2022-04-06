@@ -101,7 +101,7 @@ const EmployeeManage = () => {
 						</div>
 						{Employees.map((item, index) => (
 							<div className='row listdata' key={index}>
-								<div className='col-1'>{index}</div>
+								<div className='col-1'>{index + 1}</div>
 								<div className='col-3'>
 									<div className='image-name'>
 										<img src={item.image} className='image' alt='user' />

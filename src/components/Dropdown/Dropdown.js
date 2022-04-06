@@ -9,13 +9,13 @@ function Dropdown() {
 
 	const MenuItems = [
 		{
-			title: 'Employees',
-			path: '/employeesmessage',
+			title: 'Messages',
+			path: '/messages',
 			cName: 'dropdown-link',
 		},
 		{
-			title: 'Leave Request',
-			path: '/leaveRequest',
+			title: 'Requests',
+			path: '/requests',
 			cName: 'dropdown-link',
 		},
 	];

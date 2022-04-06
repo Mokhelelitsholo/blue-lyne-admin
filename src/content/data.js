@@ -112,3 +112,86 @@ export const Employees = [
 		report: '',
 	},
 ];
+
+export const outlets = [
+	{
+		Business: 'Outlet 1',
+		Owner: 'Name Surname',
+		Address: '01 Street Name, City, Province, SA',
+		Orders: 30,
+		Spent: 46310,
+	},
+	{
+		Business: 'Outlet 2',
+		Owner: 'Name Surname',
+		Address: '02 Street Name, City, Province, SA',
+		Orders: 28,
+		Spent: 46310,
+	},
+	{
+		Business: 'Outlet 3',
+		Owner: 'Name Surname',
+		Address: '01 Street Name, City, Province, SA',
+		Orders: 52,
+		Spent: 87310,
+	},
+	{
+		Business: 'Outlet 4',
+		Owner: 'Name Surname',
+		Address: '02 Street Name, City, Province, SA',
+		Orders: 21,
+		Spent: 26310,
+	},
+	{
+		Business: 'Outlet 5',
+		Owner: 'Name Surname',
+		Address: '01 Street Name, City, Province, SA',
+		Orders: 72,
+		Spent: 190310,
+	},
+	{
+		Business: 'Outlet 6',
+		Owner: 'Name Surname',
+		Address: '02 Street Name, City, Province, SA',
+		Orders: 41,
+		Spent: 39310,
+	},
+];
+
+export const EmployeeTime = [
+	{
+		date: '31/04/2022',
+		start: '08:00',
+		end: '16:00',
+		lstart: '11:00',
+		lend: '12:00',
+	},
+	{
+		date: '01/04/2022',
+		start: '08:00',
+		end: '16:00',
+		lstart: '11:00',
+		lend: '11:58',
+	},
+	{
+		date: '03/04/2022',
+		start: '07:54',
+		end: '15:30',
+		lstart: '11:00',
+		lend: '11:58',
+	},
+	{
+		date: '04/04/2022',
+		start: '07:54',
+		end: '15:30',
+		lstart: '11:00',
+		lend: '11:58',
+	},
+	{
+		date: '05/04/2022',
+		start: '07:54',
+		end: '15:30',
+		lstart: '11:00',
+		lend: '11:58',
+	},
+];
