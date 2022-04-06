@@ -54,3 +54,61 @@ export const CategoryData = [
 		Sales: 32856,
 	},
 ];
+
+export const Employees = [
+	{
+		image:
+			'https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png',
+		name: 'Employee Employee 1',
+		status: 'On Duty',
+		start: '07:58',
+		end: '00:00',
+		lstart: '00:00',
+		lend: '00:00',
+		report: '',
+	},
+	{
+		image:
+			'https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png',
+		name: 'Employee Employee 2',
+		status: 'On Duty',
+		start: '07:58',
+		end: '00:00',
+		lstart: '11:02',
+		lend: '12:00',
+		report: '',
+	},
+	{
+		image:
+			'https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png',
+		name: 'Employee Employee 3',
+		status: 'Off Duty',
+		start: '07:58',
+		end: '15:30',
+		lstart: '11:02',
+		lend: '12:05',
+		report: 'Available',
+	},
+	{
+		image:
+			'https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png',
+		name: 'Employee Employee 4',
+		status: 'On Leave',
+		start: '00:00',
+		end: '00:00',
+		lstart: '00:00',
+		lend: '00:00',
+		report: '',
+	},
+	{
+		image:
+			'https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png',
+		name: 'Employee Employee 5',
+		status: 'On Duty',
+		start: '08:10',
+		end: '00:00',
+		lstart: '00:00',
+		lend: '00:00',
+		report: '',
+	},
+];

@@ -10,22 +10,22 @@ function Dropdown2() {
 	const MenuItems = [
 		{
 			title: 'Employees',
-			path: '/employeesMng',
+			path: '/employeemanage',
 			cName: 'dropdown-link',
 		},
 		{
 			title: 'Products',
-			path: '/productMng',
+			path: '/productmanage',
 			cName: 'dropdown-link',
 		},
 		{
 			title: 'Businesses',
-			path: '/businessMng',
+			path: '/businessmanage',
 			cName: 'dropdown-link',
 		},
 		{
 			title: 'Orders',
-			path: '/ordersMng',
+			path: '/ordersmanage',
 			cName: 'dropdown-link',
 		},
 	];

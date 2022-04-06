@@ -1,10 +1,4 @@
-import React, {
-	useState,
-	useEffect,
-	useRef,
-	useCallback,
-	useContext,
-} from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './NavBar.css';
 
@@ -46,7 +40,6 @@ const useMountedState = () => {
 function NavBar() {
 	let isMounted = useMountedState();
 	const [click, setClick] = useState(false);
-	const [navbar, setNavbar] = useState(false);
 	const [searchWord, setSearchWord] = useState('');
 	const [dropdown, setDropdown] = useState('');
 

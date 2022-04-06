@@ -56,8 +56,6 @@
 	display: none;
 }
 
-
-
 .profile-nav {
 	display: flex;
 	justify-content: flex-end;
@@ -100,7 +98,7 @@
 	border: none;
 	margin: 3px 0;
 	font-size: 14px;
-	color: #000000;
+	color: #04084e;
 	width: 250px;
 	background-color: #F0EFF5;
 }

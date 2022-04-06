@@ -12,6 +12,11 @@ body {
 	background-color: #F0EFF5;
 }
 
+.headerspace{
+	height: 120px;
+}
+
+
 * {
 	margin: 0;
 	padding: 0;

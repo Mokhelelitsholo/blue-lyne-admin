@@ -10,12 +10,7 @@ function Dropdown() {
 	const MenuItems = [
 		{
 			title: 'Employees',
-			path: '/employeesMsg',
-			cName: 'dropdown-link',
-		},
-		{
-			title: 'Business',
-			path: '/businessMsg',
+			path: '/employeesmessage',
 			cName: 'dropdown-link',
 		},
 		{
