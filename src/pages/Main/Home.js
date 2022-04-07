@@ -223,7 +223,7 @@ const Home = () => {
 							</div>
 						</div>
 						<div className='col'>
-							<div className='card graph-card'>
+							<div className='card orderstats'>
 								<div className='header'>
 									<h6>Orders</h6>
 

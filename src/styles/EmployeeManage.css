@@ -154,6 +154,11 @@ body {
 	font-weight: 600;
 }
 
+.managecontainer .link{
+	color: inherit;
+	text-decoration: none !important;
+}
+
 .managecontainer .status {
 	border: 1px solid ;
 	border-radius: 10px;

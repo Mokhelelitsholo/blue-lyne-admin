@@ -13,7 +13,7 @@ import {
 	mdiMessageOutline,
 	mdiBriefcaseOutline,
 	mdiFolderPlus,
-	mdiCalendarMonthOutline,
+	mdiMapMarkerRadiusOutline,
 	mdiCartOutline,
 } from '@mdi/js';
 
@@ -241,18 +241,18 @@ function NavBar() {
 						</li>
 						<li className='nav-item'>
 							<Link
-								to='/Calendar'
+								to='/livemap'
 								className='nav-links'
 								onClick={closeMobileMenu}
 							>
 								<Icon
-									path={mdiCalendarMonthOutline}
-									title='calendar'
+									path={mdiMapMarkerRadiusOutline}
+									title='live locations'
 									size={'20px'}
 									color='#F1F2EE'
 									className='nav-icon'
 								/>
-								Calendar
+								Live Locations
 							</Link>
 						</li>
 					</ul>

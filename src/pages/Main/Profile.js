@@ -2,12 +2,14 @@ import React from 'react';
 import '../../styles/Profile.css';
 import { EmployeeTime } from '../../content/data';
 import Icon from '@mdi/react';
+import MapView from '../../components/Mapview/MapView';
 
 import {
 	mdiDotsVertical,
 	mdiAt,
 	mdiMapMarkerOutline,
 	mdiPhoneOutline,
+	mdiOfficeBuildingMarkerOutline,
 } from '@mdi/js';
 
 const Profile = () => {
@@ -107,6 +109,17 @@ const Profile = () => {
 											/>
 											Email Address
 										</div>
+
+										<div className='information mt-5'>
+											<Icon
+												path={mdiOfficeBuildingMarkerOutline}
+												title='icon'
+												size={'20px'}
+												color='#04084e90'
+												className='mr-2'
+											/>
+											Working Address
+										</div>
 									</div>
 								</div>
 							</div>
@@ -205,6 +218,102 @@ const Profile = () => {
 								</div>
 							</div>
 						</div>
+						<div className='col-4'>
+							<div className='card mapview'>
+								<div className='header'>
+									<h6>Last Saved Location</h6>
+
+									<Icon
+										path={mdiDotsVertical}
+										title='options'
+										size={'20px'}
+										color='#04084e'
+										className='optionicon'
+									/>
+								</div>
+								<div className='mapcontainer'>
+									<MapView />
+								</div>
+							</div>
+						</div>
+						<div className='col-8'>
+							<div className='card report'>
+								<div className='header'>
+									<h6>Last Report</h6>
+
+									<Icon
+										path={mdiDotsVertical}
+										title='options'
+										size={'20px'}
+										color='#04084e'
+										className='optionicon'
+									/>
+								</div>
+								<div className='row mt-3'>
+									<div className='col-6'>
+										<div className='reportbox list'>
+											<div className='heading'>Report Name</div>
+											<div>
+												<div className='listitems'>
+													<div>list Item</div>
+													<div>12</div>
+												</div>
+												<div className='listitems'>
+													<div>list Item</div>
+													<div>43</div>
+												</div>
+												<div className='listitems'>
+													<div>list Item</div>
+													<div>48</div>
+												</div>
+												<div className='listitems'>
+													<div>list Item</div>
+													<div>31</div>
+												</div>
+												<div className='listitems'>
+													<div>list Item</div>
+													<div>16</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className='col-6'>
+										<div className='reportbox'>
+											<div className='heading'>Report Image</div>
+
+											<div className='image-box'>
+												<img
+													src='https://yourlawnwise.com/wp-content/uploads/2017/08/photo-placeholder.png'
+													className='report-image'
+													alt='report'
+												/>
+												<img
+													src='https://yourlawnwise.com/wp-content/uploads/2017/08/photo-placeholder.png'
+													className='report-image'
+													alt='report'
+												/>
+												<img
+													src='https://yourlawnwise.com/wp-content/uploads/2017/08/photo-placeholder.png'
+													className='report-image'
+													alt='report'
+												/>
+												<img
+													src='https://yourlawnwise.com/wp-content/uploads/2017/08/photo-placeholder.png'
+													className='report-image'
+													alt='report'
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						{/*if Business Owner Profile
+						
+							- Replace employee location with business location
+							- Replace time stats with Latest Order 
+						*/}
 					</div>
 				</section>
 			</div>

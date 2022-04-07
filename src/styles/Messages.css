@@ -1,0 +1,273 @@
+@font-face {
+	font-family: 'Poppins';
+	src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+	font-display: swap;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	color: #04084e;
+	overflow-x: hidden;
+	background-color: #F0EFF5;
+}
+
+.headerspace{
+	height: 120px;
+}
+
+.messagescontainer{
+    flex: 1;
+    background-color: #F0EFF5;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 100px; 
+}
+
+.messagescontainer .nav-path{
+	font-size: 14px;
+	font-weight: 800;
+	color: #04084e90;
+	text-transform: capitalize;
+	margin: 20px 0;
+	cursor: pointer;
+}
+
+.messagescontainer .messagebox{
+    padding: 20px;
+    background-color: #b0945650;
+    border-radius: 4px;
+}
+
+.messagescontainer .card{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+	height: 75vh;
+}
+
+.messagescontainer .messagebox .chatlist{
+    border-right: 1px solid #04084e50;
+    height: 100%;
+}
+
+.messagescontainer .search{
+	border: 1px solid #04084e50;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	padding: 0 20px;
+	height: 40px;
+	background-color: #F0EFF5;
+    margin: 20px 0;
+}
+
+.messagescontainer .search-input{
+	outline: none;
+	border: none;
+	margin: 3px 0;
+	font-size: 14px;
+	color: #04084e;
+	background-color: #F0EFF5;
+    width: 100%;
+}
+
+.messagescontainer .list-item {
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.messagescontainer .list-item.selected {
+	border-radius: 10px;
+	padding: 10px;
+	background-color: #F0EFF5;
+}
+
+.messagescontainer .image-name {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	transition: all 0.5s ease;
+	cursor: pointer;
+}
+
+.messagescontainer .image-name .image {
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 1px solid #FFF;
+	margin-right: 20px;
+}
+
+.messagescontainer .image-name .user-name {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.messagescontainer .image-name .message{
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	color: #04084e90;
+}
+
+.messagescontainer .image-name .time{
+	color: #04084e90;
+	position: absolute;
+	right: 5%;
+	font-size: 12px;
+}
+
+.messagescontainer .messagelist{
+	position: relative;
+	display: flex;
+	height: 100%;
+}
+
+.messagescontainer .messagelist .header{
+	position: absolute;
+	top: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px 0;
+	width: 98.5%;
+}
+
+.messagescontainer .messagelist-container{
+	background-color: #F0EFF5;
+	margin-top: 85px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 87%;
+	width: 100%;
+	padding: 20px 20px;
+}
+
+.messagescontainer .optionicon{
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.messagescontainer .optionicon:hover{
+	transform: scale(1.1);
+}
+
+.messagescontainer .bottom{
+	position: absolute;
+	bottom: 10px;
+	width: 96%;
+	height: 70px;
+}
+
+.messagescontainer .bottom .message-input-box{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: #FFFFFF;
+	border-radius: 50px;
+	height: 65px;
+	padding: 20px 20px;
+}
+
+.messagescontainer .emoji{
+	border-right: 1px solid #04084e90;
+	padding-left: 10px;
+	padding-right: 20px;
+}
+  
+.messagescontainer .message-input{
+	outline: none;
+	border: none;
+	margin: 3px 0;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-size: 14px;
+	color: #04084e;
+	background-color: #Ffffff;
+    width: 100%;
+	height: 45px;
+}
+
+.messagescontainer .send-btn{
+	height: 50px;
+	width: 60px;
+	border-radius: 50%;
+	background-color: #b09456;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* Messsage Bubble */
+
+.bubble {
+	width: 60%;
+	margin-bottom: 10px;
+}
+
+.bubble .image-name {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	transition: all 0.5s ease;
+	cursor: pointer;
+}
+
+.bubble .image-name .image {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 1px solid #FFF;
+	margin-right: 10px;
+}
+
+.bubble .image-name .user-name {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.bubble .image-name .msgtime{
+	font-size: 10px;
+	font-weight: 600;
+	color: #04084e90;
+}
+
+.bubble .messagebubble{
+	border: 1px solid #04084e50;
+	background-color: #FFF;
+	margin-top: 10px;
+	border-radius: 20px;
+	border-top-left-radius: 0px;
+	padding: 7px 7px;
+	width: fit-content;
+}
+
+.sentByMe .messagebubble{
+	border: 1px solid #04084e50;
+	background-color: #b0945650;
+	margin-top: 10px;
+	border-radius: 20px;
+	border-top-left-radius: 0px;
+	padding: 7px 7px;
+	width: fit-content;
+}
+
+.bubble .messagebubble .text{
+	line-height: 1.7em;
+    white-space: pre-wrap;
+}

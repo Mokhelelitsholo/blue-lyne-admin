@@ -38,7 +38,8 @@ body {
 	margin-bottom: 20px;
 }
 
-.profilecontainer .info{
+.profilecontainer .info
+.profilecontainer .mapview{
 	padding: 20px 30px;
 	margin-bottom: 20px;
     width: 100%;
@@ -142,4 +143,50 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+}
+
+.profilecontainer .mapcontainer{
+	width: 100%;
+	height: 450px;
+	border: 1px solid #04084e50;
+	border-radius: 3px;
+	margin-top: 20px;
+}
+
+.profilecontainer .reportbox{
+	overflow: hidden;
+}
+
+.profilecontainer .reportbox .heading{
+    font-weight: 600;
+    color: #04084e90;
+	margin-bottom: 15px;
+}
+
+.profilecontainer .image-box{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.profilecontainer .report-image{
+	width: 200px;
+	height: 200px;
+	border: 1px solid #04084e50;
+	object-fit: cover;
+	margin: 5px;
+}
+
+.profilecontainer .list {
+	border-right: 1px solid #04084e50;
+	padding-right: 30px;
+	height: 100%;
+}
+
+.profilecontainer .listitems{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0;
 }

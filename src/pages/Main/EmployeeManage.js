@@ -4,6 +4,7 @@ import Icon from '@mdi/react';
 import { Employees } from '../../content/data';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { Link } from 'react-router-dom';
 
 import {
 	mdiCheckCircleOutline,
@@ -105,12 +106,20 @@ const EmployeeManage = () => {
 								<div className='col-3'>
 									<div className='image-name'>
 										<img src={item.image} className='image' alt='user' />
-										<div className='user-name'>{item.name}</div>
+										<div className='user-name'>
+											<Link
+												to={{
+													pathname: `/profile`, ///profile/?learner=${item.id}
+												}}
+												className='link'
+											>
+												{item.name}
+											</Link>
+										</div>
 									</div>
 								</div>
 								<div className='col'>{checkStatus(item.status)}</div>
 								<div className='col'>
-									{' '}
 									<div className='time-space'>
 										<div
 											className='status'

@@ -82,6 +82,12 @@ body {
 .firstbody .graph-card {
 	padding: 20px 30px;
 	margin-bottom: 20px;
+	height: 585px;
+}
+
+.firstbody .orderstats {
+	padding: 20px 30px;
+	margin-bottom: 20px;
 }
 
 .firstbody .header{
