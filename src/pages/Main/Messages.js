@@ -1,17 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../../styles/Messages.css';
 import Icon from '@mdi/react';
+import { messages, users } from '../../content/messages';
+import Bubble from '../../components/Message/Bubble';
 
 import {
 	mdiMagnify,
 	mdiDotsVertical,
 	mdiEmoticonHappyOutline,
 	mdiSend,
+	mdiForumOutline,
+	mdiWindowClose,
 } from '@mdi/js';
 
 const Messages = () => {
+	const dummy = useRef();
 	const [search, setSearch] = useState('');
 	const [message, setMessage] = useState('');
+	const [selected, setSelected] = useState('');
+
+	useEffect(() => {
+		if (selected !== '') {
+			dummy.current.scrollIntoView({ behavior: 'smooth' });
+		}
+	}, [selected]);
 
 	return (
 		<>
@@ -40,149 +52,114 @@ const Messages = () => {
 								</div>
 							</div>
 							<div className='list-items'>
-								<div className='list-item'>
-									<div className='image-name'>
-										<img
-											src='https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png'
-											className='image'
-											alt='user'
-										/>
-										<div className='name-messsage'>
-											<div className='user-name'>Name Surname</div>
-											<div className='message'>
-												hello world!, How you doing?
+								{users.map((item, index) => (
+									<div
+										className={
+											selected === index ? `list-item selected` : `list-item`
+										}
+										key={index}
+										onClick={() => setSelected(index)}
+									>
+										<div className='image-name'>
+											<img src={item.image} className='image' alt='user' />
+											<div className='name-messsage'>
+												<div className='user-name'>
+													{item.name} {index + 1}
+												</div>
+												<div className='message'>{item.text}</div>
 											</div>
+											<div className='time'>{item.time}</div>
 										</div>
-										<div className='time'>Time</div>
 									</div>
-								</div>
-
-								<div className='list-item selected'>
-									<div className='image-name'>
-										<img
-											src='https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png'
-											className='image'
-											alt='user'
-										/>
-										<div className='name-messsage'>
-											<div className='user-name'>Name Surname</div>
-											<div className='message'>
-												hello world!, How you doing?
-											</div>
-										</div>
-										<div className='time'>Time</div>
-									</div>
-								</div>
-
-								<div className='list-item'>
-									<div className='image-name'>
-										<img
-											src='https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png'
-											className='image'
-											alt='user'
-										/>
-										<div className='name-messsage'>
-											<div className='user-name'>Name Surname</div>
-											<div className='message'>
-												hello world!, How you doing?
-											</div>
-										</div>
-										<div className='time'>Time</div>
-									</div>
-								</div>
+								))}
 							</div>
 						</div>
 						<div className='col messagelist'>
-							<div className='header'>
-								<div className='image-name'>
-									<img
-										src='https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png'
-										className='image'
-										alt='user'
-									/>
-									<div className='name-messsage'>
-										<div className='user-name'>Name Surname</div>
-										<div className='message'>Offline</div>
-									</div>
-								</div>
-								<Icon
-									path={mdiDotsVertical}
-									title='options'
-									size={'30px'}
-									color='#04084e'
-									className='optionicon'
-								/>
-							</div>
-
-							<div className='messagelist-container'>
-								<div className='bubble'>
-									<div className='image-name'>
-										<img
-											src='https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png'
-											className='image'
-											alt='user'
-										/>
-										<div className='name-messsage'>
-											<div className='user-name'>Name Surname</div>
-											<div className='msgtime'>Time</div>
+							{selected !== '' ? (
+								<>
+									<div className='header'>
+										<div className='image-name'>
+											<img
+												src='https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png'
+												className='image'
+												alt='user'
+											/>
+											<div className='name-messsage'>
+												<div className='user-name'>Name Surname</div>
+												<div className='message'>Offline</div>
+											</div>
 										</div>
-									</div>
-									<div className='messagebubble'>
-										<div className='text'>
-											Hello, how ar you?
-											{'\n'}I wanted to talk about...
-										</div>
-									</div>
-								</div>
-
-								<div className='bubble sentByMe'>
-									<div className='image-name'>
-										<img
-											src='https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png'
-											className='image'
-											alt='user'
-										/>
-										<div className='name-messsage'>
-											<div className='user-name'>Me</div>
-											<div className='msgtime'>Time</div>
-										</div>
-									</div>
-									<div className='messagebubble'>
-										<div className='text'>
-											Im good?
-											{'\n'}I wanted to talk about...
-										</div>
-									</div>
-								</div>
-
-								<div className='bottom'>
-									<div className='message-input-box'>
-										<div className='emoji'>
+										<div>
 											<Icon
-												path={mdiEmoticonHappyOutline}
-												title='emojis'
+												path={mdiDotsVertical}
+												title='options'
 												size={'30px'}
-												color='#04084e90'
+												color='#04084e'
+												className='optionicon'
 											/>
-										</div>
-										<input
-											type='text'
-											className='message-input'
-											placeholder='Type your message here...'
-											onChange={(text) => setMessage(text.target.value)}
-											value={message}
-										/>
-										<div className='send-btn'>
 											<Icon
-												path={mdiSend}
-												title='send'
-												size={'20px'}
-												color='#fff'
+												path={mdiWindowClose}
+												title='close chats'
+												size={'30px'}
+												color='#04084e'
+												className='optionicon'
+												onClick={() => setSelected('')}
 											/>
 										</div>
 									</div>
-								</div>
-							</div>
+
+									<div className='messagelist-container'>
+										<>
+											<main>
+												{messages &&
+													messages.map((msg, index) => (
+														<Bubble key={index} message={msg} />
+													))}
+												<span ref={dummy}></span>
+											</main>
+										</>
+										<div className='bottom'>
+											<div className='message-input-box'>
+												<div className='emoji'>
+													<Icon
+														path={mdiEmoticonHappyOutline}
+														title='emojis'
+														size={'35px'}
+														color='#04084e90'
+													/>
+												</div>
+												<input
+													type='text'
+													className='message-input'
+													placeholder='Type your message here...'
+													onChange={(text) => setMessage(text.target.value)}
+													value={message}
+												/>
+												<button className='send-btn' disabled={!message}>
+													<Icon
+														path={mdiSend}
+														title='send'
+														size={'20px'}
+														color='#fff'
+													/>
+												</button>
+											</div>
+										</div>
+									</div>
+								</>
+							) : (
+								<>
+									<div className='no-messages'>
+										<Icon
+											path={mdiForumOutline}
+											title='message'
+											size={'300px'}
+											color='#04084e90'
+										/>
+										<div>Select a message sender from the message list</div>
+									</div>
+								</>
+							)}
 						</div>
 					</div>
 				</div>

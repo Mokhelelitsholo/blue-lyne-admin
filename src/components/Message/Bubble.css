@@ -1,0 +1,54 @@
+.bubble {
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.sent {
+	flex-direction: row-reverse;
+}
+
+.bubble .image-time {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.bubble .image-time .image {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 1px solid #FFF;
+}
+
+.bubble .image-time .msgtime{
+	font-size: 10px;
+	font-weight: 600;
+	color: #04084e90;
+	text-align: center;
+}
+
+.bubble .messagebubble{
+	border: 1px solid #04084e50;
+	background-color: #FFF;
+	margin-top: 10px;
+	border-radius: 10px;
+	border-top-left-radius: 0px;
+	padding: 5px 7px;
+	max-width: 70%;
+}
+
+.bubble.sent .messagebubble{
+	border-radius: 10px;
+	border-top-right-radius: 0px;
+}
+
+
+.bubble .messagebubble .text{
+	line-height: 1.7em;
+    white-space: pre-wrap;
+}

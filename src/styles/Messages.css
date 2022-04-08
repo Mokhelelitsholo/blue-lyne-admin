@@ -74,6 +74,27 @@ body {
     width: 100%;
 }
 
+.list-items {
+	padding: 10px 0;
+	height: 87%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.list-items::-webkit-scrollbar {
+	width: 7px;
+}
+
+.list-items::-webkit-scrollbar-track {
+	background: #b0945650;
+}
+
+.list-items::-webkit-scrollbar-thumb {
+	background: #b09456;
+}
+
 .messagescontainer .list-item {
 	border-radius: 10px;
 	padding: 10px;
@@ -108,6 +129,7 @@ body {
 	overflow: hidden;
 	font-size: 14px;
 	font-weight: 600;
+	width: 390px;
 }
 
 .messagescontainer .image-name .message{
@@ -115,19 +137,29 @@ body {
 	white-space: nowrap;
 	overflow: hidden;
 	color: #04084e90;
+	width: 390px;
 }
 
 .messagescontainer .image-name .time{
 	color: #04084e90;
-	position: absolute;
-	right: 5%;
 	font-size: 12px;
+	align-self: flex-end;
+	padding-bottom: 30px;
 }
 
 .messagescontainer .messagelist{
 	position: relative;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 100%;
+}
+
+.messagescontainer .no-messages{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .messagescontainer .messagelist .header{
@@ -145,16 +177,36 @@ body {
 	background-color: #F0EFF5;
 	margin-top: 85px;
 	position: relative;
-	display: flex;
-	flex-direction: column;
 	height: 87%;
 	width: 100%;
 	padding: 20px 20px;
 }
 
+main {
+	padding: 10px 0;
+	height: 89%;
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+}
+
+main::-webkit-scrollbar {
+	width: 7px;
+}
+
+main::-webkit-scrollbar-track {
+	background: #b0945650;
+}
+
+main::-webkit-scrollbar-thumb {
+	background: #b09456;
+}
+
 .messagescontainer .optionicon{
 	cursor: pointer;
 	transition: all 0.3s ease;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .messagescontainer .optionicon:hover{
@@ -180,9 +232,7 @@ body {
 }
 
 .messagescontainer .emoji{
-	border-right: 1px solid #04084e90;
 	padding-left: 10px;
-	padding-right: 20px;
 }
   
 .messagescontainer .message-input{
@@ -198,7 +248,7 @@ body {
 	height: 45px;
 }
 
-.messagescontainer .send-btn{
+.messagescontainer button{
 	height: 50px;
 	width: 60px;
 	border-radius: 50%;
@@ -208,66 +258,8 @@ body {
 	align-items: center;
 }
 
-
-/* Messsage Bubble */
-
-.bubble {
-	width: 60%;
-	margin-bottom: 10px;
+.messagescontainer button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
-.bubble .image-name {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	transition: all 0.5s ease;
-	cursor: pointer;
-}
-
-.bubble .image-name .image {
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	object-fit: cover;
-	border: 1px solid #FFF;
-	margin-right: 10px;
-}
-
-.bubble .image-name .user-name {
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	font-size: 12px;
-	font-weight: 600;
-}
-
-.bubble .image-name .msgtime{
-	font-size: 10px;
-	font-weight: 600;
-	color: #04084e90;
-}
-
-.bubble .messagebubble{
-	border: 1px solid #04084e50;
-	background-color: #FFF;
-	margin-top: 10px;
-	border-radius: 20px;
-	border-top-left-radius: 0px;
-	padding: 7px 7px;
-	width: fit-content;
-}
-
-.sentByMe .messagebubble{
-	border: 1px solid #04084e50;
-	background-color: #b0945650;
-	margin-top: 10px;
-	border-radius: 20px;
-	border-top-left-radius: 0px;
-	padding: 7px 7px;
-	width: fit-content;
-}
-
-.bubble .messagebubble .text{
-	line-height: 1.7em;
-    white-space: pre-wrap;
-}

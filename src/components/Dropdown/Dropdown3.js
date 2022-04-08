@@ -14,11 +14,6 @@ function Dropdown3() {
 			cName: 'dropdown-link',
 		},
 		{
-			title: 'Top Employees',
-			path: '/topemployees',
-			cName: 'dropdown-link',
-		},
-		{
 			title: 'Promotions',
 			path: '/promotions',
 			cName: 'dropdown-link',
