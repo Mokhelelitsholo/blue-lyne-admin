@@ -19,6 +19,12 @@ import ProductManage from '../pages/Main/ProductManage';
 import Messages from '../pages/Main/Messages';
 import Requests from '../pages/Main/Requests';
 
+import Announcement from '../pages/Main/Announcement';
+import Promotions from '../pages/Main/Promotions';
+
+import Orders from '../pages/Main/Orders';
+import LiveLocation from '../pages/Main/LiveLocation';
+
 function AppStack() {
 	return (
 		<>
@@ -32,6 +38,10 @@ function AppStack() {
 					<Route path='/productmanage' exact component={ProductManage} />
 					<Route path='/messages' exact component={Messages} />
 					<Route path='/requests' exact component={Requests} />
+					<Route path='/announcement' exact component={Announcement} />
+					<Route path='/promotions' exact component={Promotions} />
+					<Route path='/orders' exact component={Orders} />
+					<Route path='/livemap' exact component={LiveLocation} />
 					<Redirect from='*' to='/' />
 				</Switch>
 			</Router>

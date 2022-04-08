@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../styles/Requests.css';
 import Icon from '@mdi/react';
-import { ProductData } from '../../content/data';
+import { request } from '../../content/messages';
 import {
 	mdiArchiveOutline,
 	mdiCancel,
 	mdiCheckboxMultipleBlankCircleOutline,
+	mdiCheckboxMultipleBlankCircle,
 	mdiCheckCircleOutline,
 	mdiChevronLeft,
 	mdiChevronRight,
@@ -16,6 +17,32 @@ import {
 } from '@mdi/js';
 
 const Requests = () => {
+	const [selectedRequest, setSelectedRequest] = useState({
+		index: '',
+		status: false,
+	});
+
+	const onSelect = (index, status) => {
+		if (index === selectedRequest.index) {
+			setSelectedRequest({
+				index: '',
+				status: false,
+			});
+		} else {
+			setSelectedRequest({
+				index,
+				status,
+			});
+		}
+	};
+
+	const getColor = (warehouse) => {
+		if (warehouse === 'Warehouse 1') {
+			return '#e8000d';
+		} else if (warehouse === 'Warehouse 2') {
+			return '#01b3c7';
+		} else return '#ff8243';
+	};
 	return (
 		<>
 			<div className='headerspace' />
@@ -24,7 +51,7 @@ const Requests = () => {
 
 				<section className='row'>
 					<div className='col-3'>
-						<div className='card'>
+						<div className='card fullPage'>
 							<div className='header'>
 								<h6>Leave Requests</h6>
 							</div>
@@ -91,15 +118,24 @@ const Requests = () => {
 
 								<div className='labels'>
 									<div className='label'>
-										<div className='labelcircle' />
+										<div
+											className='labelcircle'
+											style={{ backgroundColor: '#e8000d' }}
+										/>
 										<div className='labelItem'>Warehouse 1</div>
 									</div>
 									<div className='label'>
-										<div className='labelcircle' />
+										<div
+											className='labelcircle'
+											style={{ backgroundColor: '#01b3c7' }}
+										/>
 										<div className='labelItem'>Warehouse 2</div>
 									</div>
 									<div className='label'>
-										<div className='labelcircle' />
+										<div
+											className='labelcircle'
+											style={{ backgroundColor: '#ff8243' }}
+										/>
 										<div className='labelItem'>Warehouse 3</div>
 									</div>
 								</div>
@@ -107,86 +143,99 @@ const Requests = () => {
 						</div>
 					</div>
 					<div className='col'>
-						<div className='card'>
+						<div className='card fullPage'>
 							<div className='subheader'>
-								<div className='buttonicon'>
+								<button
+									className='buttonicon'
+									disabled={!selectedRequest.status}
+								>
 									<Icon
 										path={mdiCheckCircleOutline}
 										title='Approve'
 										size={'20px'}
 										className='icon'
 									/>
-								</div>
-								<div className='buttonicon'>
+								</button>
+								<button
+									className='buttonicon'
+									disabled={!selectedRequest.status}
+								>
 									<Icon
 										path={mdiCancel}
 										title='Disapprove'
 										size={'20px'}
 										className='icon'
 									/>
-								</div>
-								<div className='buttonicon'>
+								</button>
+								<button
+									className='buttonicon'
+									disabled={!selectedRequest.status}
+								>
 									<Icon
 										path={mdiArchiveOutline}
 										title='Move To Archive'
 										size={'20px'}
 										className='icon'
 									/>
-								</div>
-								<div className='buttonicon'>
+								</button>
+								<button
+									className='buttonicon'
+									disabled={!selectedRequest.status}
+								>
 									<Icon
 										path={mdiTrashCanOutline}
 										title='Move To Trash'
 										size={'20px'}
 										className='icon'
 									/>
-								</div>
-								<div className='buttonicon'>
+								</button>
+								<button
+									className='buttonicon'
+									onClick={() =>
+										setSelectedRequest({
+											index: '',
+											status: false,
+										})
+									}
+								>
 									<Icon
 										path={mdiRefresh}
 										title='Refresh'
 										size={'20px'}
 										className='icon'
 									/>
-								</div>
+								</button>
 							</div>
 
 							<div className='request-list mt-4'>
-								<div className='listitem row'>
-									<div className='col-3 leaveRequester'>
-										<Icon
-											path={mdiCheckboxMultipleBlankCircleOutline}
-											title='categoty'
-											size={'25px'}
-											className='icon'
-										/>
-										Name Surname
+								{request.map((item, index) => (
+									<div
+										className={
+											selectedRequest.index === index
+												? 'listitem selected row'
+												: 'listitem row'
+										}
+										key={index}
+									>
+										<div className='col-3 leaveRequester'>
+											<Icon
+												path={
+													selectedRequest.index === index
+														? mdiCheckboxMultipleBlankCircle
+														: mdiCheckboxMultipleBlankCircleOutline
+												}
+												title='categoty'
+												size={'25px'}
+												className='icon'
+												color={getColor(item.warehouse)}
+												onClick={() => onSelect(index, true)}
+											/>
+											{item.requester}
+										</div>
+										<div className='col leaveComment'>{item.comment}</div>
+										<div className='col-2'>{item.timestamp}</div>
 									</div>
-									<div className='col leaveComment'>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-										Donec vel velit consectetur, volutpat ligula lobortis,
-										mattis sapien.
-									</div>
-									<div className='col-2'>Date Sent</div>
-								</div>
-
-								<div className='listitem seen row'>
-									<div className='col-3 leaveRequester'>
-										<Icon
-											path={mdiCheckboxMultipleBlankCircleOutline}
-											title='categoty'
-											size={'25px'}
-											className='icon'
-										/>
-										Name Surname
-									</div>
-									<div className='col leaveComment'>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-										Donec vel velit consectetur, volutpat ligula lobortis,
-										mattis sapien.
-									</div>
-									<div className='col-2'>Date Sent</div>
-								</div>
+								))}
 							</div>
 							<div className='pagination'>
 								<div>Showing 1-20 of 43</div>

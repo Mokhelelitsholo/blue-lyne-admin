@@ -1,0 +1,57 @@
+@font-face {
+	font-family: 'Poppins';
+	src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+	font-display: swap;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	color: #04084e;
+	overflow-x: hidden;
+	background-color: #F0EFF5;
+}
+
+.promotionscontainer{
+    flex: 1;
+    background-color: #F0EFF5;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 100px; 
+}
+
+.promotionscontainer .nav-path{
+	font-size: 14px;
+	font-weight: 800;
+	color: #04084e90;
+	text-transform: capitalize;
+	margin: 20px 0;
+	cursor: pointer;
+}
+
+.promotionscontainer .card{
+	padding: 20px 30px;
+	margin-bottom: 20px;
+    width: 100%;
+}
+
+.promotionscontainer .header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.promotionscontainer .header h6{
+	color: #04084e;
+	font-weight: 600;
+}
+
+.promotionscontainer .header .optionicon{
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.promotionscontainer .header .optionicon:hover{
+	transform: scale(1.1);
+}

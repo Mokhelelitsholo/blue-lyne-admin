@@ -195,3 +195,62 @@ export const EmployeeTime = [
 		lend: '11:58',
 	},
 ];
+
+export const orders = [
+	{
+		owner: 'Name Surname',
+		prevordercount: 30,
+		itemcount: 56,
+		total: 32495.98,
+		address: 'Outlet Physical Address',
+		delivery: true,
+	},
+	{
+		owner: 'Name Surname',
+		prevordercount: 30,
+		itemcount: 56,
+		total: 42495.98,
+		address: 'Outlet Physical Address',
+		delivery: true,
+	},
+	{
+		owner: 'Name Surname',
+		prevordercount: 10,
+		itemcount: 56,
+		total: 37325.98,
+		address: 'Outlet Physical Address',
+		delivery: true,
+	},
+	{
+		owner: 'Name Surname',
+		prevordercount: 2,
+		itemcount: 10,
+		total: 12795.5,
+		address: 'Outlet Physical Address',
+		delivery: false,
+	},
+	{
+		owner: 'Name Surname',
+		prevordercount: 3,
+		itemcount: 23,
+		total: 31534.34,
+		address: 'Outlet Physical Address',
+		delivery: true,
+	},
+	{
+		owner: 'Name Surname',
+		prevordercount: 56,
+		itemcount: 43,
+		total: 64495.98,
+		address: 'Outlet Physical Address',
+		delivery: false,
+	},
+	{
+		owner: 'Name Surname',
+		prevordercount: 90,
+		itemcount: 23,
+		total: 42495.98,
+		address: 'Outlet Physical Address',
+		delivery: true,
+	},
+];

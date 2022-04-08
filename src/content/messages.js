@@ -153,3 +153,103 @@ export const users = [
 		time: '10:45',
 	},
 ];
+
+export const request = [
+	{
+		requester: 'Name Surname',
+		warehouse: 'Warehouse 1',
+		comment:
+			'Dictum fusce ut placerat orci nulla pellentesque dignissim enim sit. Ac turpis egestas integer eget aliquet nibh.',
+		from: '2022/04/08 08:00',
+		to: '2022/04/08 15:00',
+		allday: true,
+		type: 'leave type',
+		timestamp: 'date time',
+	},
+	{
+		requester: 'Name Surname 2',
+		warehouse: 'Warehouse 2',
+		comment:
+			'Massa tincidunt dui ut ornare lectus sit. Tortor at risus viverra adipiscing at in tellus. Odio euismod lacinia at quis risus sed vulputate odio',
+		from: '2022/04/08 08:00',
+		to: '2022/04/08 15:00',
+		allday: true,
+		type: 'leave type',
+		timestamp: 'date time',
+	},
+	{
+		requester: 'Name Surname 3',
+		warehouse: 'Warehouse 1',
+		comment:
+			'Massa tincidunt dui ut ornare lectus sit. Tortor at risus viverra adipiscing at in tellus.',
+		from: '2022/04/08 08:00',
+		to: '2022/04/08 15:00',
+		allday: false,
+		type: 'leave type',
+		timestamp: 'date time',
+	},
+	{
+		requester: 'Name Surname 4',
+		warehouse: 'Warehouse 2',
+		comment:
+			'Dictum fusce ut placerat orci nulla pellentesque dignissim enim sit. Ac turpis egestas integer eget aliquet nibh.',
+		from: '2022/04/08 08:00',
+		to: '2022/04/10 15:00',
+		allday: true,
+		type: 'leave type',
+		timestamp: 'date time',
+	},
+	{
+		requester: 'Name Surname 5',
+		warehouse: 'Warehouse 3',
+		comment: 'Odio euismod lacinia at quis risus sed vulputate odio',
+		from: '2022/04/08 08:00',
+		to: '2022/04/08 12:00',
+		allday: false,
+		type: 'leave type',
+		timestamp: 'date time',
+	},
+	{
+		requester: 'Name Surname 6',
+		warehouse: 'Warehouse 2',
+		comment:
+			'Massa tincidunt dui ut ornare lectus sit. Tortor at risus viverra adipiscing at in tellus. Odio euismod lacinia at quis risus sed vulputate odio',
+		from: '2022/04/08 08:00',
+		to: '2022/04/08 15:00',
+		allday: true,
+		type: 'leave type',
+		timestamp: 'date time',
+	},
+	{
+		requester: 'Name Surname 7',
+		warehouse: 'Warehouse 1',
+		comment:
+			'Massa tincidunt dui ut ornare lectus sit. Tortor at risus viverra adipiscing at in tellus.',
+		from: '2022/04/08 08:00',
+		to: '2022/04/08 15:00',
+		allday: false,
+		type: 'leave type',
+		timestamp: 'date time',
+	},
+	{
+		requester: 'Name Surname 8',
+		warehouse: 'Warehouse 2',
+		comment:
+			'Dictum fusce ut placerat orci nulla pellentesque dignissim enim sit. Ac turpis egestas integer eget aliquet nibh.',
+		from: '2022/04/08 08:00',
+		to: '2022/04/10 15:00',
+		allday: true,
+		type: 'leave type',
+		timestamp: 'date time',
+	},
+	{
+		requester: 'Name Surname 9',
+		warehouse: 'Warehouse 3',
+		comment: 'Odio euismod lacinia at quis risus sed vulputate odio',
+		from: '2022/04/08 08:00',
+		to: '2022/04/08 12:00',
+		allday: false,
+		type: 'leave type',
+		timestamp: 'date time',
+	},
+];
