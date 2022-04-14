@@ -11,6 +11,7 @@ import Navbar from '../components/NavBar/NavBar';
 
 import Home from '../pages/Main/Home';
 import Profile from '../pages/Main/Profile';
+import Product from '../pages/Main/Product';
 
 import EmployeeManage from '../pages/Main/EmployeeManage';
 import BusinessManage from '../pages/Main/BusinessManage';
@@ -33,6 +34,7 @@ function AppStack() {
 				<Switch>
 					<Route path='/' exact component={Home} />
 					<Route path='/profile' exact component={Profile} />
+					<Route path='/product' exact component={Product} />
 					<Route path='/employeemanage' exact component={EmployeeManage} />
 					<Route path='/businessmanage' exact component={BusinessManage} />
 					<Route path='/productmanage' exact component={ProductManage} />

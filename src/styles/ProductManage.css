@@ -111,6 +111,13 @@ body {
 	font-weight: 600;
 }
 
+
+.productcontainer .link{
+	color: inherit;
+	text-decoration: none !important;
+	font-weight: 600;
+}
+
 .productcontainer .listdata{
 	margin-top: 13px;
 	padding-bottom: 13px;

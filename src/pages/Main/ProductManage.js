@@ -3,6 +3,7 @@ import '../../styles/ProductManage.css';
 import Icon from '@mdi/react';
 import { ProductData } from '../../content/data';
 import { mdiDotsVertical, mdiMagnify } from '@mdi/js';
+import { Link } from 'react-router-dom';
 
 const ProductManage = () => {
 	const [search, setSearch] = useState('');
@@ -91,7 +92,16 @@ const ProductManage = () => {
 						{ProductData.map((prod, index) => (
 							<div className='row listdata' key={index}>
 								<div className='col-1'>{index + 1}</div>
-								<div className='col-3'>{prod.ProductName}</div>
+								<div className='col-3'>
+									<Link
+										to={{
+											pathname: `/product`, ///profile/?learner=${item.id}
+										}}
+										className='link'
+									>
+										{prod.ProductName}
+									</Link>
+								</div>
 								<div className='col'>R {prod.Price}</div>
 								<div className='col'>{prod.Quantity}</div>
 								<div className='col'>{statuscheck(prod.Quantity)}</div>
