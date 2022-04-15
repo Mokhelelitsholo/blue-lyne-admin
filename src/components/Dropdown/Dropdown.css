@@ -16,6 +16,7 @@
   border-bottom: #848C8E;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 999;
 }
 
 .dropdown-menu li:hover {
@@ -35,6 +36,13 @@
   text-decoration: none;
   color: #A58340;
   padding: 16px;
+}
+
+.logout-link{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .dropdown-link:hover{

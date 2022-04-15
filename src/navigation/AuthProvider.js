@@ -26,11 +26,11 @@ const useMountedState = () => {
 };
 
 export const AuthProvider = ({ children }) => {
+	let isMounted = useMountedState();
+
 	const [user, setUser] = useState(null);
 	const [admin, setAdmin] = useState(null);
-	let isMounted = useMountedState();
 	const [userData, setUserData] = useState({});
-	const [profileActive, setProfileActive] = useState(false);
 
 	useEffect(() => {
 		const getUser = async () => {
@@ -66,8 +66,6 @@ export const AuthProvider = ({ children }) => {
 				admin,
 				setAdmin,
 				userData,
-				profileActive,
-				setProfileActive,
 				login: async (Email, Password) => {
 					try {
 						await firebase
@@ -95,7 +93,7 @@ export const AuthProvider = ({ children }) => {
 						});
 					}
 				},
-				register: async (Name, Phone, Email, Password) => {
+				register: async (Name, Email, Password) => {
 					try {
 						await firebase
 							.auth()
@@ -108,8 +106,8 @@ export const AuthProvider = ({ children }) => {
 									.set({
 										Name,
 										Email,
-										Phone,
-										User: 'Customer',
+										Phone: '',
+										User: 'Admin',
 										Image:
 											'https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png',
 										createdAt: firebase.firestore.Timestamp.fromDate(

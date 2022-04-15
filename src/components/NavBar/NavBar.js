@@ -21,6 +21,7 @@ import Logo from '../../assets/images/logo.png';
 import Dropdown from '../Dropdown/Dropdown';
 import Dropdown2 from '../Dropdown/Dropdown2';
 import Dropdown3 from '../Dropdown/Dropdown3';
+import ProfDropdown from '../Dropdown/ProfDropdown';
 
 const useMountedState = () => {
 	const mountedRef = useRef(false);
@@ -41,6 +42,7 @@ function NavBar() {
 	const [click, setClick] = useState(false);
 	const [searchWord, setSearchWord] = useState('');
 	const [dropdown, setDropdown] = useState('');
+	const [profiledrop, setProfiledrop] = useState(false);
 
 	const onMouseEnter = (e) => {
 		if (window.innerWidth < 960) {
@@ -113,7 +115,10 @@ function NavBar() {
 							/>
 						</div>
 						<div className='user-image'>
-							<div className='profile-nav'>
+							<div
+								className='profile-nav'
+								onClick={() => setProfiledrop(!profiledrop)}
+							>
 								<img
 									src='https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png'
 									className='nav-image'
@@ -127,6 +132,7 @@ function NavBar() {
 									color='#A58340'
 								/>
 							</div>
+							{profiledrop && <ProfDropdown />}
 						</div>
 					</div>
 				</div>
