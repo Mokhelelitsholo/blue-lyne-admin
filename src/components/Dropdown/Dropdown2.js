@@ -23,6 +23,11 @@ function Dropdown2() {
 			path: '/businessmanage',
 			cName: 'dropdown-link',
 		},
+		{
+			title: 'Warehouses',
+			path: '/warehousemanage',
+			cName: 'dropdown-link',
+		},
 	];
 
 	return (

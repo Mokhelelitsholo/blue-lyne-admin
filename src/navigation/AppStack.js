@@ -16,6 +16,7 @@ import Product from '../pages/Main/Product';
 import EmployeeManage from '../pages/Main/EmployeeManage';
 import BusinessManage from '../pages/Main/BusinessManage';
 import ProductManage from '../pages/Main/ProductManage';
+import WarehouseManage from '../pages/Main/WarehouseManage';
 
 import Messages from '../pages/Main/Messages';
 import Requests from '../pages/Main/Requests';
@@ -38,6 +39,7 @@ function AppStack() {
 					<Route path='/employeemanage' exact component={EmployeeManage} />
 					<Route path='/businessmanage' exact component={BusinessManage} />
 					<Route path='/productmanage' exact component={ProductManage} />
+					<Route path='/warehousemanage' exact component={WarehouseManage} />
 					<Route path='/messages' exact component={Messages} />
 					<Route path='/requests' exact component={Requests} />
 					<Route path='/announcement' exact component={Announcement} />

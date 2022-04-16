@@ -129,3 +129,21 @@ body {
 	transform: scale(1.1);
 	cursor: pointer;
 }
+
+.businesscontainer .button{
+	border-radius: 3px;
+	background-color: #b09456;
+	color: #F0EFF5;
+	height: 35px;
+	width: fit-content;
+    padding: 0 20px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	transition: all 0.3s ease ;
+}
+
+.businesscontainer .button:hover{
+	transform: scale(1.1);
+	cursor: pointer;
+}
