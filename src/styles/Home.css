@@ -81,7 +81,7 @@ body {
 .firstbody .graph-card {
 	padding: 20px 30px;
 	margin-bottom: 20px;
-	height: 585px;
+	height: 590px;
 	position: relative;
 }
 
@@ -282,6 +282,12 @@ body {
 		height: 500px;
 	}
 
+	.firstbody .graph-card .graph {
+		height: 95%;
+		width: 100%;
+		position: relative;
+	}
+
 	.data-group {
 		flex-direction: column;
 		margin-bottom: 20px;
@@ -296,6 +302,15 @@ body {
 	.progress-bar {
 		height: 6px;
 		width: 500px;
+	}
+
+	.homecontainer .smbargraph {
+		height: 280px;
+	}
+
+	.homecontainer .catcircle {
+		width: 55px;
+		height: 55px;
 	}
 }
 
@@ -318,6 +333,12 @@ body {
 		height: 400px;
 	}
 
+	.firstbody .graph-card .graph {
+		height: 95%;
+		width: 100%;
+		position: relative;
+	}
+
 	.data-group {
 		flex-direction: column;
 		margin-bottom: 20px;
@@ -326,6 +347,23 @@ body {
 	.progress-bar {
 		height: 6px;
 		width: 400px;
+	}
+
+	.homecontainer .smbargraph {
+		height: 300px;
+	}
+
+	.homecontainer .stats-bold {
+		font-size: 18px;
+	}
+
+	.homecontainer .catcircle {
+		width: 50px;
+		height: 50px;
+	}
+
+	.homecontainer .roundamount {
+		font-size: 18px;
 	}
 }
 
@@ -339,7 +377,7 @@ body {
 	}
 
 	.homecontainer .main .card {
-		padding: 10px 20px;
+		padding: 10px 15px;
 		margin-bottom: 7px;
 	}
 	.homecontainer .main .circle {
@@ -353,9 +391,21 @@ body {
 	}
 
 	.firstbody .graph-card {
-		padding: 10px 20px;
+		padding: 10px 15px;
 		margin-bottom: 7px;
-		height: 380px;
+		height: 350px;
+	}
+
+	.firstbody .graph-card .graph {
+		height: 90%;
+		width: 100%;
+		position: relative;
+	}
+
+	.homecontainer .smcard,
+	.firstbody .orderstats {
+		padding: 10px 15px;
+		margin-bottom: 7px;
 	}
 
 	.data-group {
@@ -366,5 +416,16 @@ body {
 	.progress-bar {
 		height: 6px;
 		width: 280px;
+	}
+
+	.homecontainer .smbargraph {
+		height: 300px;
+	}
+	.homecontainer .stats-bold {
+		font-size: 16px;
+	}
+
+	.homecontainer .roundamount {
+		font-size: 16px;
 	}
 }

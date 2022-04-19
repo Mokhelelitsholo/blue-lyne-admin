@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { Chart } from 'primereact/chart';
 import '../../styles/Home.css';
 import Icon from '@mdi/react';
@@ -15,7 +15,24 @@ import {
 	mdiStoreSettingsOutline,
 } from '@mdi/js';
 
+const useMountedState = () => {
+	const mountedRef = useRef(false);
+	const isMounted = useCallback(() => mountedRef.current, []);
+
+	useEffect(() => {
+		mountedRef.current = true;
+		return () => {
+			mountedRef.current = false;
+		};
+	}, []);
+
+	return isMounted;
+};
+
 const Home = () => {
+	let isMounted = useMountedState();
+	const [windowScreen, setWindowscreen] = useState(false);
+
 	const [percentage, setPercentage] = useState({
 		order: 23,
 		completed: 78,
@@ -23,22 +40,22 @@ const Home = () => {
 	});
 	const [lineStylesData] = useState({
 		labels: [
-			'January',
-			'February',
-			'March',
-			'April',
+			'Jan',
+			'Feb',
+			'Mar',
+			'Apr',
 			'May',
-			'June',
-			'July',
-			'August',
-			'September',
-			'October',
-			'Novemeber',
-			'December',
+			'Jun',
+			'Jul',
+			'Aug',
+			'Sep',
+			'Oct',
+			'Nov',
+			'Dec',
 		],
 		datasets: [
 			{
-				label: 'First Dataset',
+				label: 'Montly Sales',
 				data: [65, 59, 80, 81, 56, 55, 40, 57, 30, 61, 46, 85],
 				fill: true,
 				tension: 0.1,
@@ -124,6 +141,16 @@ const Home = () => {
 		return amount.toFixed(2);
 	};
 
+	const checkWindowSize = () => {
+		if (window.innerWidth < 575) {
+			if (isMounted()) setWindowscreen(true);
+		} else {
+			if (isMounted()) setWindowscreen(false);
+		}
+	};
+
+	window.addEventListener('resize', checkWindowSize);
+
 	return (
 		<>
 			<div className='headerspace' />
@@ -200,7 +227,7 @@ const Home = () => {
 				</section>
 				<section className='firstbody'>
 					<div className='row'>
-						<div className='col'>
+						<div className='col-sm-12 col-md-12 col-lg-12 col-xl-6'>
 							<div className='card graph-card'>
 								<div className='header'>
 									<h6>Statistics</h6>
@@ -223,7 +250,7 @@ const Home = () => {
 								</div>
 							</div>
 						</div>
-						<div className='col'>
+						<div className='col-sm-12 col-md-12 col-lg-12 col-xl-6'>
 							<div className='card orderstats'>
 								<div className='header'>
 									<h6>Orders</h6>
@@ -290,7 +317,7 @@ const Home = () => {
 
 				<section>
 					<div className='row'>
-						<div className='col'>
+						<div className='col-sm-12 col-md-12 col-lg-6 col-xl-4'>
 							<div className='card smcard'>
 								<div className='flex-header'>
 									<div className='data'>
@@ -313,7 +340,7 @@ const Home = () => {
 								<div className='showbtn'>Show All</div>
 							</div>
 						</div>
-						<div className='col'>
+						<div className='col-sm-12 col-md-12 col-lg-6 col-xl-4'>
 							<div className='card smcard'>
 								<div className='flex-header'>
 									<div className='data'>
@@ -336,7 +363,7 @@ const Home = () => {
 								<div className='showbtn'>Show All</div>
 							</div>
 						</div>
-						<div className='col'>
+						<div className='col-sm-12 col-md-12 col-lg-12 col-xl-4'>
 							<div className='card smcard'>
 								<div className='flex-header'>
 									<div className='data'>
@@ -364,7 +391,7 @@ const Home = () => {
 
 				<section>
 					<div className='row'>
-						<div className='col'>
+						<div className='col-sm-12 col-md-12 col-lg-12 col-xl-8'>
 							<div className='card smcard'>
 								<div className='smheader'>
 									<h6>Recent Products</h6>
@@ -378,28 +405,40 @@ const Home = () => {
 									/>
 								</div>
 								<div className='productlist'>
-									<div className='row rowheading'>
-										<div className='col-4'>Product Name</div>
-										<div className='col-2'>Price</div>
-										<div className='col-2'>Quantity</div>
-										<div className='col-2'>Status</div>
-										<div className='col-2'>Amount</div>
-									</div>
-									{ProductData.map((prod, index) => (
-										<div className='row rowproducts' key={index}>
-											<div className='col-4'>{prod.ProductName}</div>
-											<div className='col-2'>R {prod.Price}</div>
-											<div className='col-2'>{prod.Quantity}</div>
-											<div className='col-2'>{statuscheck(prod.Quantity)}</div>
-											<div className='col-2'>
-												R {amountcal(prod.Price, prod.Quantity)}
+									{windowScreen ? (
+										<div className='smallscreen'>
+											<div>
+												The device screen is too small to show the table
 											</div>
 										</div>
-									))}
+									) : (
+										<>
+											<div className='row rowheading'>
+												<div className='col-4'>Product Name</div>
+												<div className='col-2'>Price</div>
+												<div className='col-2'>Quantity</div>
+												<div className='col-2'>Status</div>
+												<div className='col-2'>Amount</div>
+											</div>
+											{ProductData.map((prod, index) => (
+												<div className='row rowproducts' key={index}>
+													<div className='col-4'>{prod.ProductName}</div>
+													<div className='col-2'>R {prod.Price}</div>
+													<div className='col-2'>{prod.Quantity}</div>
+													<div className='col-2'>
+														{statuscheck(prod.Quantity)}
+													</div>
+													<div className='col-2'>
+														R {amountcal(prod.Price, prod.Quantity)}
+													</div>
+												</div>
+											))}
+										</>
+									)}
 								</div>
 							</div>
 						</div>
-						<div className='col-4'>
+						<div className='col-sm-12 col-md-12 col-lg-12 col-xl-4'>
 							<div className='card smcard'>
 								<div className='smheader'>
 									<h6>Best Selling Category</h6>
@@ -412,6 +451,7 @@ const Home = () => {
 										className='optionicon'
 									/>
 								</div>
+								{}
 								{CategoryData.map((item, index) => (
 									<div className='smheader cat' key={index}>
 										<div className='innerheader'>
