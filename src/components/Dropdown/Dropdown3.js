@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Dropdown.css';
 import { Link } from 'react-router-dom';
 
-function Dropdown3() {
+const Dropdown3 = ({ closeMobileMenu }) => {
 	const [click, setClick] = useState(false);
 
 	const handleClick = () => setClick(!click);
@@ -31,7 +31,10 @@ function Dropdown3() {
 						<Link
 							className={item.cName}
 							to={item.path}
-							onClick={() => setClick(false)}
+							onClick={() => {
+								setClick(false);
+								closeMobileMenu();
+							}}
 						>
 							{item.title}
 						</Link>
@@ -40,6 +43,6 @@ function Dropdown3() {
 			</ul>
 		</>
 	);
-}
+};
 
 export default Dropdown3;

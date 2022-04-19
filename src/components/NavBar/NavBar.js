@@ -1,5 +1,12 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, {
+	useState,
+	useEffect,
+	useRef,
+	useCallback,
+	useContext,
+} from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { AuthContext } from '../../navigation/AuthProvider';
 import './NavBar.css';
 
 import Icon from '@mdi/react';
@@ -39,24 +46,31 @@ const useMountedState = () => {
 
 function NavBar() {
 	let isMounted = useMountedState();
+	const { userData } = useContext(AuthContext);
 	const [click, setClick] = useState(false);
 	const [searchWord, setSearchWord] = useState('');
 	const [dropdown, setDropdown] = useState('');
 	const [profiledrop, setProfiledrop] = useState(false);
 
 	const onMouseEnter = (e) => {
-		if (window.innerWidth < 960) {
-			setDropdown('');
+		if (window.innerWidth < 992) {
 		} else {
 			setDropdown(e);
 		}
 	};
 
 	const onMouseLeave = () => {
-		if (window.innerWidth < 960) {
-			setDropdown('');
+		if (window.innerWidth < 992) {
 		} else {
 			setDropdown('');
+		}
+	};
+
+	const onTap = (e) => {
+		if (e === dropdown) {
+			setDropdown('');
+		} else {
+			setDropdown(e);
 		}
 	};
 
@@ -80,15 +94,6 @@ function NavBar() {
 								<img src={Logo} alt='Logo' className='LogoImage' />
 							</div>
 						</NavLink>
-						<div className='menu-icon' onClick={handleClick}>
-							<Icon
-								path={click ? mdiClose : mdiMenu}
-								title='menu'
-								size={'26px'}
-								color='#A58340'
-								className='mdiClose'
-							/>
-						</div>
 					</div>
 					<div className='right'>
 						<div className='search'>
@@ -120,11 +125,17 @@ function NavBar() {
 								onClick={() => setProfiledrop(!profiledrop)}
 							>
 								<img
-									src='https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png'
+									src={
+										userData !== null
+											? userData.Image
+											: 'https://www.pngkit.com/png/full/302-3022217_roger-berry-avatar-placeholder.png'
+									}
 									className='nav-image'
 									alt='user'
 								/>
-								<div className='nav-user-name'>Tsholofelo</div>
+								<div className='nav-user-name'>
+									{userData !== null && userData.Name}
+								</div>
 								<Icon
 									path={mdiChevronDown}
 									title='dropdown'
@@ -138,10 +149,23 @@ function NavBar() {
 				</div>
 			</nav>
 			<div className='main-nav'>
-				<div className='nav-menu'>
+				<div className='nav'>
+					<Icon
+						path={click ? mdiClose : mdiMenu}
+						title='menu'
+						size={'28px'}
+						color='#F0EFF5'
+						className='menu-icon'
+						onClick={handleClick}
+					/>
 					<ul className={click ? 'nav-menu active' : 'nav-menu'}>
 						<li className='nav-item'>
-							<Link to='/' className='nav-links' onClick={closeMobileMenu}>
+							<Link
+								to='/'
+								className='nav-links'
+								onClick={closeMobileMenu}
+								activeClass='nav-links-active'
+							>
 								<Icon
 									path={mdiMonitorDashboard}
 									title='dashboard'
@@ -156,8 +180,9 @@ function NavBar() {
 							className='nav-item'
 							onMouseEnter={() => onMouseEnter('manage')}
 							onMouseLeave={onMouseLeave}
+							onClick={() => onTap('manage')}
 						>
-							<Link className='nav-links' onClick={closeMobileMenu}>
+							<div className='nav-links'>
 								<Icon
 									path={mdiBriefcaseOutline}
 									title='manage'
@@ -172,16 +197,20 @@ function NavBar() {
 									size={'20px'}
 									color='#F1F2EE'
 									style={{ marginLeft: 5 }}
+									className='nav-icon'
 								/>
-							</Link>
-							{dropdown === 'manage' && <Dropdown2 />}
+							</div>
+							{dropdown === 'manage' && (
+								<Dropdown2 closeMobileMenu={closeMobileMenu} />
+							)}
 						</li>
 						<li
 							className='nav-item'
 							onMouseEnter={() => onMouseEnter('communication')}
 							onMouseLeave={onMouseLeave}
+							onClick={() => onTap('communication')}
 						>
-							<Link className='nav-links' onClick={closeMobileMenu}>
+							<div className='nav-links'>
 								<Icon
 									path={mdiMessageOutline}
 									title='communication'
@@ -196,17 +225,21 @@ function NavBar() {
 									size={'20px'}
 									color='#F1F2EE'
 									style={{ marginLeft: 5 }}
+									className='nav-icon'
 								/>
-							</Link>
-							{dropdown === 'communication' && <Dropdown />}
+							</div>
+							{dropdown === 'communication' && (
+								<Dropdown closeMobileMenu={closeMobileMenu} />
+							)}
 						</li>
 
 						<li
 							className='nav-item'
 							onMouseEnter={() => onMouseEnter('create')}
 							onMouseLeave={onMouseLeave}
+							onClick={() => onTap('create')}
 						>
-							<Link className='nav-links' onClick={closeMobileMenu}>
+							<div className='nav-links'>
 								<Icon
 									path={mdiFolderPlus}
 									title='create'
@@ -221,14 +254,18 @@ function NavBar() {
 									size={'20px'}
 									color='#F1F2EE'
 									style={{ marginLeft: 5 }}
+									className='nav-icon'
 								/>
-							</Link>
-							{dropdown === 'create' && <Dropdown3 />}
+							</div>
+							{dropdown === 'create' && (
+								<Dropdown3 closeMobileMenu={closeMobileMenu} />
+							)}
 						</li>
 						<li
 							className='nav-item'
 							onMouseEnter={() => onMouseEnter('add')}
 							onMouseLeave={onMouseLeave}
+							onClick={() => onTap('add')}
 						>
 							<Link
 								to='/orders'
@@ -250,6 +287,7 @@ function NavBar() {
 								to='/livemap'
 								className='nav-links'
 								onClick={closeMobileMenu}
+								activeClass='nav-links-active'
 							>
 								<Icon
 									path={mdiMapMarkerRadiusOutline}

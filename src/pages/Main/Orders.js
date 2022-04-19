@@ -151,7 +151,7 @@ const Orders = () => {
 
 							<div className='listdata'>
 								{orders.map((item, index) => (
-									<div className='row listdata'>
+									<div className='row listdata' key={index}>
 										<div className='col-1'>{index + 1}</div>
 										<div className='col owner'>
 											<Icon

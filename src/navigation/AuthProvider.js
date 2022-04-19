@@ -29,7 +29,6 @@ export const AuthProvider = ({ children }) => {
 	let isMounted = useMountedState();
 
 	const [user, setUser] = useState(null);
-	const [admin, setAdmin] = useState(null);
 	const [userData, setUserData] = useState({});
 
 	useEffect(() => {
@@ -63,8 +62,6 @@ export const AuthProvider = ({ children }) => {
 			value={{
 				user,
 				setUser,
-				admin,
-				setAdmin,
 				userData,
 				login: async (Email, Password) => {
 					try {

@@ -132,7 +132,7 @@ const Home = () => {
 
 				<section className='main'>
 					<div className='row'>
-						<div className='col'>
+						<div className='col-sm-6 col-lg-3'>
 							<div className='card color1'>
 								<div className='circle'>
 									<Icon
@@ -148,7 +148,7 @@ const Home = () => {
 								</div>
 							</div>
 						</div>
-						<div className='col'>
+						<div className='col-sm-6 col-lg-3'>
 							<div className='card color2'>
 								<div className='circle'>
 									<Icon
@@ -164,7 +164,7 @@ const Home = () => {
 								</div>
 							</div>
 						</div>
-						<div className='col'>
+						<div className='col-sm-6 col-lg-3'>
 							<div className='card color3'>
 								<div className='circle'>
 									<Icon
@@ -180,7 +180,7 @@ const Home = () => {
 								</div>
 							</div>
 						</div>
-						<div className='col'>
+						<div className='col-sm-6 col-lg-3'>
 							<div className='card color4'>
 								<div className='circle'>
 									<Icon
@@ -218,6 +218,7 @@ const Home = () => {
 										type='line'
 										data={lineStylesData}
 										options={basicOptions}
+										style={{ height: '100%', width: '100%' }}
 									/>
 								</div>
 							</div>
